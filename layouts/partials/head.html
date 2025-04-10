@@ -19,3 +19,10 @@
 {{ if .IsHome }}{{ partial "head/hugo-generator.html" . }}{{ end }}
 
 {{ partial "head/extensions.html" . }}
+
+{{ if .Site.IsServer }}
+<!-- Umami disabled in local dev -->
+{{ else }}
+<script defer src="https://cloud.umami.is/script.js" data-website-id="36bdf562-1583-4457-a9ab-63001ba58b78"></script>
+{{ end }}
+
