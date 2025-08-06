@@ -1,0 +1,43 @@
+<div class="gif-pair">
+  <div class="gif-item">
+    <img src="{{ .Get 0 }}" alt="{{ .Get 2 | default "GIF 1" }}" />
+    {{ if .Get 4 }}<p class="gif-caption">{{ .Get 4 }}</p>{{ end }}
+  </div>
+  <div class="gif-item">
+    <img src="{{ .Get 1 }}" alt="{{ .Get 3 | default "GIF 2" }}" />
+    {{ if .Get 5 }}<p class="gif-caption">{{ .Get 5 }}</p>{{ end }}
+  </div>
+</div>
+
+<style>
+.gif-pair {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.gif-item {
+  flex: 1;
+}
+
+.gif-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.gif-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .gif-pair {
+    flex-direction: column;
+  }
+}
+</style>
